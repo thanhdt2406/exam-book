@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-9">
+    <h3>BOOK DETAIL</h3>
+  </div>
+  <div class="col-3">
+    <a [routerLink]="['/books']">
+      <button class="btn btn-primary">All Books</button>
+    </a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <p><b>Book's name:</b> {{book.title}}</p><br>
+  </div>
+  <div class="col-12">
+    <p><b>Author's name:</b> {{book.author}}</p><br>
+  </div>
+  <div class="col-12">
+    <p><b>Book's description:</b></p><br>
+  </div>
+  <div class="col-12">
+    <p>{{book.description}}</p>
+  </div>
+</div>

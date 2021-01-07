@@ -1,0 +1,22 @@
+<h1>Create new book</h1>
+<form (ngSubmit)="createBook()">
+  <div class="form-group">
+    <label for="inputTitle">Title</label>
+    <input type="text" class="form-control" id="inputTitle" placeholder="Enter book's title" name="title"
+           [(ngModel)]="book.title">
+  </div>
+  <div class="form-group">
+    <label for="inputAuthor">Author</label>
+    <input type="text" class="form-control" id="inputAuthor" placeholder="Enter author's name" name="author"
+           [(ngModel)]="book.author">
+  </div>
+  <div class="form-group">
+    <label for="inputDescription">Description</label>
+    <textarea class="form-control" id="inputDescription" name="description" placeholder="Enter book's description" [(ngModel)]="book.description" rows="5"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Create</button>
+  &nbsp;
+  <a [routerLink]="['/books']">
+    <button type="button" class="btn btn-secondary">Cancel</button>
+  </a>
+</form>

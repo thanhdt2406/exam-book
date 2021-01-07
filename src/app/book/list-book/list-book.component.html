@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-9" *ngIf="books.length > 1">
+    <h3>{{books.length}} books</h3>
+  </div>
+  <div class="col-9" *ngIf="books.length <= 1">
+    <h3>{{books.length}} book</h3>
+  </div>
+  <div class="col-3">
+    <a [routerLink]="['/books/create']">
+      <button class="btn btn-primary">Create new book</button>
+    </a>
+  </div>
+</div>
+<div class="row">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Book's name</th>
+      <th scope="col">Author's name</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of books, let i = index" >
+      <th scope="row">{{i}}</th>
+      <td><a [routerLink]="['/books/'+book.id]">{{book.title}}</a></td>
+      <td>{{book.author}}</td>
+      <td>
+        <a [routerLink]="['/books/edit/'+book.id]">
+          <button class="btn btn-primary">Edit</button>
+        </a>
+        &nbsp; | &nbsp;
+        <button class="btn btn-danger" (click)="deleteBook(book.id)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
