@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "book-exam"
+  "defaultProject": "book-exam",
+  "cli": {
+    "analytics": false
+  }
 }
